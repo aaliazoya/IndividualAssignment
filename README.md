@@ -10,3 +10,17 @@ We have used the Java GUI to create an interface for the chat bot and used Java 
 The software development cycle that we decided to work on is the waterfall model as for small deliverable projects waterfall model is convenient. As we are developing a small chat-bot whose requirements are clear, the project is short and simple, waterfall model seemed like a good fit for this project. This model is also very easy to understand as the steps are straightforward and avoids any confusion as it takes a more linear approach to the completion of the project.<br>
 On the other hand, this model does slow down the process as the team needs to complete a step before moving on to the next one which often overlooks revision or any unexpected errors.
 
+**WATER-FALL MODEL:**
+1. PLANNING:
+   -	Requirements
+   - Project scope.
+2.	DESIGN:
+    -	User-friendly design
+    -	User approval
+    - Revision
+3.	IMPLEMENTATION:
+    - Developing phase
+    -	Error-Handling
+4. DEPLOYMENT:
+5. MAINTAINENECE
+
