@@ -24,3 +24,15 @@ On the other hand, this model does slow down the process as the team needs to co
 4. DEPLOYMENT:
 5. MAINTAINENECE
 
+---
+## Assignment 3 Updates:
+1. Added a better GUI for the user to feel like the individual is having a normal conversation with the bot. (**Figure 1**)
+2. Added another topic of discussion regarding the topic, our bot was a freindly bot which would suggest some plans for the weekned, we added arcade to the list. This would allow the conversation to be more immersive.(**Figure 2**)
+3. Before there were 3 responses given if the user entered something out of topic, now there are five responses that the bot can provide the user with. The responses before were more repetitive and now as there are more responses that the bot could give, so the uder feels like it is a more normal conversation rather than talking to a bot.(**Figure 3**)
+---
+## Data Flow Diagrams
+
+We have also added two data flow diagrams for this project.
+https://github.com/aaliazoya/COSC-310-Assignment2/blob/main/Data%20Flow%20Diagram%20level%200%20.png
+https://github.com/aaliazoya/COSC-310-Assignment2/blob/main/Data%20Flow%20Diagram%20level%201%20(1).png
+--
