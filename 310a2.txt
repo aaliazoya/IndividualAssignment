@@ -1,0 +1,137 @@
+package chatbot;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.Socket;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+public class Bot extends JFrame {
+
+  JTextArea Chatarea = new JTextArea();
+  JTextField Chatbox = new JTextField();
+
+  public Bot() {
+
+    JFrame frame1 = new JFrame();
+
+    frame1.setSize(500, 500);
+    frame1.setLayout(null);
+    frame1.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    frame1.setVisible(true);
+    frame1.setResizable(false);
+    frame1.setTitle("CHATBOT");
+    frame1.add(Chatbox);
+    frame1.add(Chatarea);
+
+    Chatarea.setSize(500, 500);
+    Chatarea.setLocation(5, 5);
+    Chatbox.setSize(500, 30);
+    Chatbox.setLocation(5, 350);
+
+    Chatbox.addActionListener(new ActionListener() {
+
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        String gtext = Chatbox.getText();
+        Chatarea.append("you->" + gtext + "\n");
+        Chatbox.setText("");
+        int x = 0;
+
+        if (gtext.contains("hello") || gtext.contains("hey") || gtext.contains("hi")) {
+          bot("How are you?");
+        }
+
+        else if (gtext.contains("Good") || gtext.contains("Fine") || gtext.contains("I am good")) {
+          bot("Good to hear that, Do you have any plans for weekend? Full sentences only.");
+        }
+
+        else if (gtext.contains("Yes I have plans") || gtext.contains("Yes I'm pretty booked")) {
+          bot("Nice, have fun!");
+        } 
+
+        else if (gtext.contains("No I don't have plans") || gtext.contains("No I'm free")) {
+          bot("Do you want to go out for dinner?");
+        }
+
+        else if (gtext.contains("Yes I want to go out for dinner") || gtext.contains("Yes dinner sounds nice")) {
+          bot("Let's go then. What time are you free? 4pm or 9pm?");
+        } 
+
+        else if (gtext.contains("Thanks") || gtext.contains("Thank you")) {
+          bot("My pleasure! Are you free next weekend?");
+        }
+
+        else if (gtext.contains("Yes I am free") || gtext.contains("Yes I'm free")) {
+          bot("Let's plan something then! Do you want to go out for dinner?");
+        } 
+
+        else if (gtext.contains("4pm") || gtext.contains("9pm")) {
+          bot("Do you want to grab dinner then?");
+        } 
+
+        else if (gtext.contains("No I'm not free") || gtext.contains("No I'll be busy")) {
+          bot("When are you free?");
+        }
+
+        else if (gtext.contains("Sure let's go") || gtext.contains("Yes sounds good")) {
+          bot("Perfect see you then!");
+        } 
+
+        else if (gtext.contains("Never") || gtext.contains("I am not free")) {
+          bot("Then let's meet virtually?");
+        } 
+
+        else if (gtext.contains("No that sounds boring") || gtext.contains("No I don't want to meet virtually")) {
+          bot("sounds great, do you wanna watch a movie");
+        }
+
+        else if (gtext.contains("Yes movie sounds nice") || gtext.contains("Yes I'd love to watch a movie")) {
+          bot("what kind of movie would you like to watch");
+        } 
+
+        else if (gtext.contains("No I don't like movies") || gtext.contains("No movies are boring")) {
+          bot("do you want to go for lunch then?");
+        }
+
+        else if (gtext.contains("Yes lunch sounds nice") || gtext.contains("Yes I want to go for lunch")) {
+          bot("ohk , i have tickets for blabla on sunday at 9, would you like to join me ");
+        } 
+
+        else if (gtext.contains("No I don't want lunch") || gtext.contains("No maybe another day")) {
+          bot("ohk sure bye then");
+        } 
+
+        else if (gtext.contains("See you") || gtext.contains("See ya")) {
+          bot(":)");
+        } 
+
+        else {
+          int rand = (int)(Math.random() * 3 + 1);
+          if (rand == 1) {
+            bot(" I dont understand you");
+          } else if (rand == 2) {
+            bot("come again please");
+          } else if (rand == 3) {
+            bot("Sorry , I dont know that");
+          }
+        }
+
+      }
+
+    });
+
+  }
+
+  public void bot(String str) {
+    Chatarea.append("Bot-> " + str + "\n");
+  }
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    new Bot();
+
+  }
+
+}
