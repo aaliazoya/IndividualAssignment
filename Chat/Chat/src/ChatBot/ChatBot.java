@@ -68,8 +68,6 @@ public class ChatBot extends JFrame implements ActionListener {
 		field.setText("");
 		Socket sock = new Socket();
 
-
-
 		if (message.contains("how are you")) {
 			int num = random.nextInt(3);
 			if (num == 0) {
@@ -79,7 +77,6 @@ public class ChatBot extends JFrame implements ActionListener {
 			} else {
 				bot("I am great ,thanks for asking !");
 			}
-			
 
 		} else if (message.contains("you") && (message.contains("smart") || message.contains("good"))) {
 			bot("Thank you !");
@@ -87,7 +84,6 @@ public class ChatBot extends JFrame implements ActionListener {
 			bot("You are so polite.How can i help you ?");
 		}
 
-		
 		else if (message.contains("good morning")) {
 
 			bot("Good morning youuu, How can I help you !");
@@ -108,26 +104,20 @@ public class ChatBot extends JFrame implements ActionListener {
 
 		else if (message.contains("free this week") || message.contains("free this weekend")) {
 			bot("Yes do you wanna go out for dinner");
-		}
-		else if (message.contains("Yes, we can go for dinner") || message.contains("dinner is good option")) {
+		} else if (message.contains("Yes, we can go for dinner") || message.contains("dinner is good option")) {
 			bot("What kind of food do you like?");
-		}
-		else if (message.contains("Indian Food")||message.contains("Chinese food") ) {
+		} else if (message.contains("Indian") || message.contains("Chinese food")) {
 			bot("Do you have a favourite restaurant?");
-		}
-		else if (message.contains("Indian palace") || message.contains("wok box")|| message.contains("veerji")) {
+		} else if (message.contains("Indian palace") || message.contains("wok box") || message.contains("veerji")) {
 			bot("Sure i can make a reservation,When do you wanna go Saturday or Sunday ?");
-		}
-		else if (message.contains("Saturday") || message.contains("Sunday")) {
+		} else if (message.contains("tomorrow") || message.contains("Sunday")) {
 			bot("Sounds good, Do you wanna watch a movie too ?");
-		}
-		else if (message.contains("Not free") || message.contains("No dinner")) {
+		} else if (message.contains("Not free") || message.contains("No dinner")) {
 			bot("Do you wanna go for a movie?");
-		}
-		else if (message.contains("Yes")&&message.contains("movie") || message.contains("yeah")&&message.contains("movie")) {
+		} else if (message.contains("Yes") && message.contains("movie")
+				|| message.contains("yeah") && message.contains("movie")) {
 			bot("What Kind of Movie do you like?");
-		}
-		else if (message.contains("any")|| message.contains("no preferance")) {
+		} else if (message.contains("any") || message.contains("no preferance")) {
 			int num = random.nextInt(3);
 			if (num == 0) {
 				bot("Do you wanna watch action movie ? ");
@@ -135,47 +125,38 @@ public class ChatBot extends JFrame implements ActionListener {
 				bot("Do you wanna watch romantic Movie ?");
 			} else if (num == 2) {
 				bot("Do you wanna watch adventure movie");
-			} 
-		}
-		else if (message.contains("Action") || message.contains("Adventure")) {
+			}
+		} else if (message.contains("Yes Action") || message.contains("Adventure")) {
 			bot("we can o for either xyz or abc on sunday?");
-		}
-		else if (message.contains("Romantic")) {
+		} else if (message.contains("Yes Romantic")) {
 			bot("We can watch jkl on sunday");
-		}
-		else if (message.contains("xyz") || message.contains("abc")|| message.contains("jkl")) {
+		} else if (message.contains("xyz") || message.contains("abc") || message.contains("jkl")) {
 			bot("what time do you prefer for movie");
-		}
-		else if (message.contains("movie in the morning") || message.contains("movie in the evening")|| message.contains("movie in the night")) {
+		} else if (message.contains("movie in the morning") || message.contains("movie in the evening")
+				|| message.contains("movie in the night")) {
 			bot("Perfect , Do you want to book the tickets?");
-		}
-		else if (message.contains("Can you book?") || message.contains("you book")|| message.contains("I cant book")) {
+		} else if (message.contains("Can you book?") || message.contains("you book")
+				|| message.contains("I cant book")) {
 			bot("Sure I can Book the ticket for you");
-		}
-		else if (message.contains("Can you send the tickets") || message.contains("message details")|| message.contains("booking details")) {
+		} else if (message.contains("Can you send the tickets") || message.contains("message details")
+				|| message.contains("booking details")) {
 			bot("Sure I can send you the ticket details, Where should i Send");
-		}
-		else if (message.contains("email") || message.contains("Phone")) {
+		} else if (message.contains("email") || message.contains("Phone")) {
 			bot("Can you share your number or email");
-		}
-		else if (message.contains("this is my number") || message.contains(" here you go")|| message.contains("My email") {
+		} else if (message.contains("this is my number") || message.contains(" here you go")
+				|| message.contains("My email")) {
 			bot("I have sent you the details, Please confirm if recieved");
-		}
-		else if (message.contains("yes , Recieved") || message.contains("I have recieved")) {
+		} else if (message.contains("yes , Recieved") || message.contains("I have recieved")) {
 			bot("I am glad , Hope to see you there");
-		}
-		else if (message.contains("not recieved") || message.contains("did not get it")) {
-			bot("I will try to send it again , Please check now and reply (got it) when you recieve it ");
-		}
-		else if (message.contains("Got it") ) {
+		} else if (message.contains("not recieved") || message.contains("did not get it")) {
+			bot("I will try to send it again , Please check now and reply got it when you recieve it ");
+		} else if (message.contains("Got it")) {
 			bot("Thats good, Hope to see you there");
 		}
-		
+
 		else if (message.contains("on time") || message.contains("see you")) {
 			bot("I will be there on time , See you then");
 		}
-
-		
 
 		else if (message.contains("hi") && message.charAt(0) == 'h' || message.contains("hello")
 				|| message.contains("hey")) {
@@ -230,22 +211,28 @@ public class ChatBot extends JFrame implements ActionListener {
 			}
 			bot(ctime);
 
-		} else if (message.contains("date") || message.contains("month") || message.contains("year")
-				|| message.contains("day")) {
-
-			String cdate = new String();
-			cdate = cdate + date.getDayOfWeek() + "," + date.getDayOfMonth() + " " + date.getMonth() + " "
-					+ date.getYear();
-			bot(cdate);
-
 		}
-
 
 		else if (message.contains("clear") && (message.contains("screen") || message.contains("chat"))) {
 			bot("wait a few second...");
 			area.setText("");
 		} else {
 			try {
+				int num = random.nextInt(5);
+				if (num == 0) {
+					bot("Sorry ,I can't understand you !");
+				} else if (num == 1) {
+					bot("That is off topic ");
+				} else if (num == 2) {
+					bot("My apologies...I don't know what you are saying ");
+				} else if (num == 3) {
+					bot("My apologies...I don't understand ");
+				} else if (num == 4) {
+					bot("Come again please ");
+				}
+
+			} catch (Exception eee) {
+
 				try {
 					URL url = new URL("https://google.co.in");
 					URLConnection connection = url.openConnection();
@@ -257,21 +244,6 @@ public class ChatBot extends JFrame implements ActionListener {
 				} catch (Exception ee) {
 					bot("Connect with internet connection for get better results...");
 				}
-
-			} catch (Exception eee) {
-				int num = random.nextInt(5);
-				if (num == 0) {
-					bot("Sorry ,I can't understand you !");
-				} else if (num == 1) {
-					bot("That is off topic ");
-				} else if (num == 2) {
-					bot("My apologies...I don't know what you are saying ");
-				}else if (num == 3) {
-					bot("My apologies...I don't understand ");
-				}else if (num == 4) {
-					bot("Come again please ");
-				}
-
 			}
 		}
 
